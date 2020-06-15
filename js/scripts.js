@@ -50,6 +50,8 @@ $(document).ready(function() {
     $("#contactIDs").append(`<option value="${newContact.id}">${newContact.id}</option>`)
   })
   $("#display").click(function() {
-    $("contactOutput").append(``)
+    const contact = addressBook.getContact(parseInt($("#contactIDs").val()));
+    
+    $("#contactOutput").append(`<p id="contact${contact.id}">Name: ${contact.firstName} ${contact.lastName} Number: ${contact.telephoneNumber}</p>`);
   })
 })
