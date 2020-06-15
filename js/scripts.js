@@ -23,6 +23,15 @@ AddressBook.prototype.getContact = function(id) {
   alert('Contact Not Found');
 }
 
+AddressBook.prototype.deleteContact = function(id) {
+  for (let i = 0; i < this.contacts.length; i++) {
+    if (this.contacts[i].id === id) {
+      delete this.contacts[i];
+      break;
+    }
+  }
+}
+
 function Contact(firstName, lastName, telephoneNumber) {
   this.firstName = firstName;
   this.lastName = lastName;
