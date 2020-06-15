@@ -3,6 +3,12 @@ function AddressBook() {
   this.contacts = [];
 }
 
+function Contact(firstName, lastName, telephoneNumber) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.telephoneNumber = telephoneNumber;
+}
+
 addressBook = new AddressBook();
 
 //user interface logic
@@ -17,5 +23,7 @@ $(document).ready(function() {
       alert('Please enter a Name and Number');
       return;
     }
+
+    let newContact = new Contact(firstName, lastName, telephoneNumber);
   })
 })

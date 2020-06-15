@@ -14,7 +14,7 @@ _An address book that enables the adding and deleting of contacts._
 | :-------------     | :------------- | :------------- |
 | **Homepage** | User accesses localhost:5004 | Homepage with user input form |
 | **Program creates and initializes an Address Book object** | User input: "" | Output: "Address Book()" |
-| **Program Gathers User Input (First name, Last name, and phone number** | User input: "John, Doe, 555-5555" | Output: "John, Doe, 555-5555" |
+| **Program Gathers User Input (First name, Last name, and phone number)** | User input: "John, Doe, 555-5555" | Output: "John, Doe, 555-5555" |
 | **Program Rejects Empty Input** | User input: "" | Output: "Error" |
 | **Program creates a Contacts object** | User input: "John, Doe, 555-5555" | Output: "Contact(John, Doe, 555-5555)" |
 | **Program assigns unique ID to each contacts object** | User input: "Contact(John, Doe, 555-5555)" | Output: "Contact(John, Doe, 555-5555, 12)" |
