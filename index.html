@@ -24,11 +24,19 @@
         </div>
         <div class="form-group">
           <label for="telephoneNumber">Telephone Number:</label>
-          <input type="text" name="telephoneNumber" class="form-control">
+          <input type="tel" name="telephoneNumber" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
         </div>
         <button type="submit" class="btn">Add Contact</button>
       </form>
 
+      <select id="contactIDs">
+
+      </select>
+      <button id="display" class="btn">Display Contact</button>
+      
+      <div id="contactOutput">
+
+      </div>
     </div>
   </body>
 </html>
