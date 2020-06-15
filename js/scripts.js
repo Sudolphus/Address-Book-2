@@ -12,5 +12,10 @@ $(document).ready(function() {
     const firstName = $("input[name=firstName]").val();
     const lastName = $("input[name=lastName]").val();
     const telephoneNumber = $("input[name=telephoneNumber]").val();
+
+    if (!firstName || !lastName || !telephoneNumber) {
+      alert('Please enter a Name and Number');
+      return;
+    }
   })
 })
