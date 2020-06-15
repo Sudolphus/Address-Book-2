@@ -14,6 +14,15 @@ AddressBook.prototype.addContact = function(contact) {
   this.contacts.push(contact);
 }
 
+AddressBook.prototype.getContact = function(id) {
+  for (let i = 0; i < this.contacts.length; i++) {
+    if (this.contacts[i].id === id) {
+      return this.contacts[i];
+    }
+  }
+  alert('Contact Not Found');
+}
+
 function Contact(firstName, lastName, telephoneNumber) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -39,5 +48,8 @@ $(document).ready(function() {
     addressBook.addContact(newContact);
 
     $("#contactIDs").append(`<option value="${newContact.id}">${newContact.id}</option>`)
+  })
+  $("#display").click(function() {
+    $("contactOutput").append(``)
   })
 })
