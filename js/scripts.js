@@ -16,8 +16,10 @@ AddressBook.prototype.addContact = function(contact) {
 
 AddressBook.prototype.getContact = function(id) {
   for (let i = 0; i < this.contacts.length; i++) {
-    if (this.contacts[i].id === id) {
-      return this.contacts[i];
+    if (this.contacts[i]) {
+      if (this.contacts[i].id === id) {
+        return this.contacts[i];
+      }
     }
   }
   alert('Contact Not Found');
@@ -25,9 +27,11 @@ AddressBook.prototype.getContact = function(id) {
 
 AddressBook.prototype.deleteContact = function(id) {
   for (let i = 0; i < this.contacts.length; i++) {
-    if (this.contacts[i].id === id) {
-      delete this.contacts[i];
-      break;
+    if (this.contacts[i]) {
+      if (this.contacts[i].id === id) {
+        delete this.contacts[i];
+        break;
+      }
     }
   }
 }
@@ -61,13 +65,16 @@ $(document).ready(function() {
   $("#display").click(function() {
     const contact = addressBook.getContact(parseInt($("#contactIDs").val()));
     
-    $("#contactOutput").append(`<p id="contact${contact.id}">Name: ${contact.firstName} ${contact.lastName} Number: ${contact.telephoneNumber}</p>`);
+    $("#contactOutput").append(`<li class="contact contact${contact.id}">Name: ${contact.firstName} ${contact.lastName} Number: ${contact.telephoneNumber}</li>`);
   })
   $("#delete").click(function() {
     const id = parseInt($("#contactIDs").val());
 
     addressBook.deleteContact(id);
-    $(`#contact${id}`).remove();
+    $(`.contact${id}`).remove();
     $(`#select${id}`).remove();
+  })
+  $("#hide").click(function() {
+    $("#contactOutput").empty();
   })
 })
