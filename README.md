@@ -1,19 +1,26 @@
-# _{Application Name}_
+# _Address Book_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _An Address Book, 6.15.2020_
 
 #### By _**Micheal Hansen**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_An address book that enables the adding and deleting of contacts._
 
 ## Specifications
 
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
 | **Homepage** | User accesses localhost:5004 | Homepage with user input form |
-| **Program Gathers User Input** | User input: "10" | Output: "10" |
+| **Program creates and initializes an Address Book object** | User input: "" | Output: "Address Book()" |
+| **Program Gathers User Input (First name, Last name, and phone number** | User input: "John, Doe, 555-5555" | Output: "John, Doe, 555-5555" |
+| **Program Rejects Empty Input** | User input: "" | Output: "Error" |
+| **Program creates a Contacts object** | User input: "John, Doe, 555-5555" | Output: "Contact(John, Doe, 555-5555)" |
+| **Program assigns unique ID to each contacts object** | User input: "Contact(John, Doe, 555-5555)" | Output: "Contact(John, Doe, 555-5555, 12)" |
+| **Program adds Contacts object to Address Book array** | User input: "Contact(John, Doe, 555-5555, 12)" | Output: "Address Book.Contact(John, Doe, 555-5555, 12)" |
+| **Program displays Contacts object** | User input: "Contact(John, Doe, 555-5555, 12)" | Output: "John Doe 555-5555" |
+| **Program can delete Contacts** | User input: " Delete Contact(12)" | Output: "" |
 
 
 ## Setup/Installation Requirements
@@ -28,18 +35,16 @@ Open by downloading:
 
 Open via Bash/GitBash:
 1. Clone this repository onto your computer:
-`git clone {PUT_REPO_HERE}`
-2. Navigate into the `{NAME_OF_DIRECTORY}` directory in Visual Studio Code or preferred text editor
+`git clone https://github.com/Sudolphus/Address-Book-2`
+2. Navigate into the `address-book-2` directory in Visual Studio Code or preferred text editor
 `code .`
 3. Open index.html in Chrome or preferred browser:
 `open index.html`
 
-#### To see my live website go to {GH_PAGES_LINK_HERE}!
-
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_None currently known_
 
 ## Support and contact details
 
