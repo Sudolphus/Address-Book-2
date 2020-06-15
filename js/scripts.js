@@ -56,11 +56,18 @@ $(document).ready(function() {
     let newContact = new Contact(firstName, lastName, telephoneNumber);
     addressBook.addContact(newContact);
 
-    $("#contactIDs").append(`<option value="${newContact.id}">${newContact.id}</option>`)
+    $("#contactIDs").append(`<option value="${newContact.id}" id="select${newContact.id}">${newContact.id}</option>`)
   })
   $("#display").click(function() {
     const contact = addressBook.getContact(parseInt($("#contactIDs").val()));
     
     $("#contactOutput").append(`<p id="contact${contact.id}">Name: ${contact.firstName} ${contact.lastName} Number: ${contact.telephoneNumber}</p>`);
+  })
+  $("#delete").click(function() {
+    const id = parseInt($("#contactIDs").val());
+
+    addressBook.deleteContact(id);
+    $(`#contact${id}`).remove();
+    $(`#select${id}`).remove();
   })
 })
