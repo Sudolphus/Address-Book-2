@@ -4,16 +4,20 @@ function AddressBook() {
   this.currentId = 0;
 }
 
-AddressBook.prototype.assignID() {
+AddressBook.prototype.assignID = function() {
   this.currentId += 1;
   return this.currentId;
+}
+
+AddressBook.prototype.addContact = function(contact) {
+  contact.id = this.assignID();
+  this.contacts.push(contact);
 }
 
 function Contact(firstName, lastName, telephoneNumber) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.telephoneNumber = telephoneNumber;
-  this.id = 
 }
 
 addressBook = new AddressBook();
@@ -32,5 +36,6 @@ $(document).ready(function() {
     }
 
     let newContact = new Contact(firstName, lastName, telephoneNumber);
+    addressBook.addContact(newContact);
   })
 })
