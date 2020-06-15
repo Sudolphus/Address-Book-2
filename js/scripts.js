@@ -1,12 +1,19 @@
 //business logic
 function AddressBook() {
   this.contacts = [];
+  this.currentId = 0;
+}
+
+AddressBook.prototype.assignID() {
+  this.currentId += 1;
+  return this.currentId;
 }
 
 function Contact(firstName, lastName, telephoneNumber) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.telephoneNumber = telephoneNumber;
+  this.id = 
 }
 
 addressBook = new AddressBook();
